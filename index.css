@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Neon cam kart — analiz sonuçları (Tailwind ile birlikte blur) */
+  .mc-neon-glass {
+    @apply rounded-2xl border border-[#00ff00]/30 bg-[#1a1a1a]/90 p-6 shadow-[0_0_20px_rgba(0,255,0,0.1)] backdrop-blur-xl;
+  }
+
+  .mc-neon-title {
+    @apply font-bold tracking-tight text-[#00ff00];
+    text-shadow:
+      0 0 14px rgba(0, 255, 0, 0.45),
+      0 0 28px rgba(0, 255, 0, 0.2);
+  }
+
+  .mc-neon-label {
+    @apply font-semibold uppercase tracking-wider text-[#00ff00];
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.35);
+  }
+
+  .mc-spinner-btn {
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem;
+    border: 2px solid rgba(0, 0, 0, 0.35);
+    border-top-color: #0a0a0a;
+    border-radius: 50%;
+    animation: mc-spin-btn 0.75s linear infinite;
+    vertical-align: middle;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.55);
+  }
+
+  @keyframes mc-spin-btn {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .mc-spinner-lg {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 3px solid rgba(0, 255, 0, 0.2);
+    border-top-color: #00ff00;
+    border-right-color: rgba(0, 255, 0, 0.5);
+    animation: mc-spin-btn 0.85s linear infinite;
+    box-shadow:
+      0 0 28px rgba(0, 255, 0, 0.35),
+      inset 0 0 18px rgba(0, 255, 0, 0.06);
+  }
+}
